@@ -6,31 +6,5 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-<context:property-placeholder location = "classpath:musicPlayer.properties"/>
-    <bean id="musicBeanRock"
-          class="RockMusic">
-    </bean>
-    <bean id="musicBeanClassical"
-          class="ClassicalMusic"
-          init-method="doMyInit"
-    destroy-method="doMyDestroy"
-    factory-method="getClassicalMusic">
-    </bean>
-    <!--bean id="musicBeanPop"
-          class="PopMusic">
-    </bean>
-    <bean id ="musicPlayer"
-    class="MusicPlayer"
-    scope="prototype">
-        <property name = "musicList">
-            <list>
-                <ref bean ="musicBeanClassical"/>
-                <ref bean ="musicBeanRock"/>
-                <ref bean ="musicBeanPop"/>
-            </list>
-        </property>
-        <property name = "name" value = "${musicPlayer.name}"/>
-        <property name = "volume" value = "${musicPlayer.volume}"/>
-    </bean-->
-
+<context:component-scan base-package="ru.lena.bobr"/>
 </beans>
